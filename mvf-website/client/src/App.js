@@ -11,8 +11,6 @@ import Team from './pages/Team/Team';
 import Gallery from './pages/Gallery/Gallery';
 import ErrorPage from './pages/Error/Error';
 
-
-
 const App = () => {
     <BrowserRouter>
             <GlobalStyles />
