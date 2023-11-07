@@ -1,22 +1,24 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { BsChevronDown } from "react-icons/bs";
 
 const NavBar = () => {
     return (
         <Container>
             <NavOptions>
-                <NavOption><Link to="/about">About</Link></NavOption>
-                <NavOption><Link to="/sponsors">Sponsors</Link></NavOption>
-                <NavOption><TeamDropdown>
-                <Link to="/team">Team</Link>
-                <TeamSubmenu>
-                    <Link to="/team/23-24">23-24 Team</Link>
-                    
-                </TeamSubmenu>
-            </TeamDropdown></NavOption>
-            <NavOption><Link to='/projects'>Projects</Link></NavOption>
+                <NavOption><StyledLink to="/about">About</StyledLink></NavOption>
+                <NavOption><StyledLink to="/sponsors">Sponsors</StyledLink></NavOption>
+                <NavOption>
+                    <TeamDropdown>
+                        <StyledLink to="/team">Team <BsChevronDown /></StyledLink>
+                        <TeamSubmenu>
+                            <StyledLink to="/team/23-24">23-24</StyledLink>
+                            {/* Add more team links as needed */}
+                        </TeamSubmenu>
+                    </TeamDropdown>
+                </NavOption>
+                <NavOption><StyledLink to='/projects'>Projects</StyledLink></NavOption>
             </NavOptions>
-                        
         </Container>
     );
 }
@@ -36,15 +38,19 @@ const TeamSubmenu = styled.div`
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    border-radius: 5px; 
+    width: 100%; 
+    text-align: center; 
+    padding: 10px; 
 `;
 
 const TeamDropdown = styled.div`
     position: relative;
 
-    /* Add styles for the dropdown menu */
     &:hover {
-        & ${TeamSubmenu} {
+        ${TeamSubmenu} {
             display: block;
+            transition: display 0.2s ease-in-out;
         }
     }
 `;
@@ -52,7 +58,6 @@ const TeamDropdown = styled.div`
 const NavOptions = styled.ul`
     display: flex;
     flex-direction: row;
-
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -63,15 +68,17 @@ const NavOption = styled.li`
     font-size: 1.2rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    color: white;
+`;
+
+const StyledLink = styled(Link)`
     text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
     transition: color 0.2s ease-in-out;
 
     &:hover {
         color: #ff0000;
     }
 `;
-
 
 export default NavBar;

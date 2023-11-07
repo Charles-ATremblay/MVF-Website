@@ -9,6 +9,7 @@ import Contact from './pages/Contact/Contact';
 import Sponsors from './pages/Sponsors/Sponsors';
 import Projects from './pages/Projects/Projects';
 import Team from './pages/Team/Team';
+import TeamDetails from './pages/Team/TeamDetails';
 import ErrorPage from './pages/Error/Error';
 
 const App = () => {
