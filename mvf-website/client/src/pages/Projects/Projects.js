@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const Team = () => {
+const Projects = () => {
     return (
         <Container>
-        <h1>Team</h1>
+            <h1>Projects</h1>
         </Container>
     );
 }
@@ -14,4 +14,4 @@ const Container = styled.div`
     align-items: center;
 `;
 
-export default Team;
+export default Projects;
